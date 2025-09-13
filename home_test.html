@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gradient Landing Page</title>
+  <style>
+    :root {
+      --gradient-border: linear-gradient(135deg, #6e8efb, #a777e3);
+      --card-bg: #ffffff;
+      --fade-duration: 1s;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .card {
+      position: relative;
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 12px;
+      width: 300px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      z-index: -1;
+      border-radius: 14px;
+      background: var(--gradient-border);
+      mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      -webkit-mask-composite: destination-out;
+    }
+
+    .fade-in {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+      transition: opacity var(--fade-duration) ease, transform var(--fade-duration) ease;
+    }
+
+    footer {
+      margin-top: 4rem;
+      color: #999;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Welcome to Our Product</h1>
+    <div class="cards">
+      <div class="card fade"> 
+        <h3>Fast Performance</h3>
+        <p>Experience blazing fast speeds with optimized architecture for performance and reliability.</p>
+      </div>
+      <div class="card fade">
+        <h3>Secure by Design</h3>
+        <p>We take privacy seriously with end-to-end encryption and best-in-class security practices.</p>
+      </div>
+      <div class="card fade">
+        <h3>Beautiful Interface</h3>
+        <p>A clean and modern interface makes it easy for you to focus on what matters.</p>
+      </div>
+    </div>
+
+    <footer>
+      &copy; 2025 Your Company. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    // Fade in cards on scroll using Intersection Observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+
+    document.querySelectorAll('.card').forEach(card => {
+      observer.observe(card);
+    });
+  </script>
+
+</body>
+</html>
+
