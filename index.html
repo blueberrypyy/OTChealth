@@ -67,7 +67,16 @@
    #subscribe-form {
     max-width: 375px;  /* cap width on mobile */
   }
+  .mobile-only-btn {
+  display: inline-block; /* or flex/block depending on your layout */
+  }
 }
+
+  /* Hide by default */
+.mobile-only-btn {
+  display: none;
+}
+
 
 
  
@@ -197,7 +206,7 @@
   <form class="p-4 rounded-4 shadow-lg bg-white mx-auto fw-semibold shadow rounded-3" id="subscribe-form" style="max-width: 450px;"  action="https://script.google.com/macros/s/AKfycbyGxgudFUYvPmPpyBqeT1eBIVRJ1jKT8ii0InL5ZaZrXFsWfnfUDCTcHe39QnYTPLav-Q/exec" method="POST" target="hidden-iframe">
     <!-- Email Input -->
     <div class="mb-3">
-        <center> <h5 class="fw-semibold mt-2">Join us on our wellness journey🩷</h5></center>
+        <center> <h5 class="fw-semibold mt-2">Join us on your next wellness journey🩷</h5></center>
       <input 
         type="email" 
         class="form-control form-control-lg mt-4" 
@@ -308,21 +317,21 @@
   </div>
 
   <!-- Download button  -->
-  <div class="p-1 rounded-3 ms-auto me-2 d-inline-block gradient-border" >
+  <!--div class="p-1 rounded-3 ms-auto me-2 d-inline-block gradient-border" >
     <a id="downloadLink" target="_blank" href="https://drive.google.com/uc?export=download&id=1_l-ZcpOLpD6cCgIt1KRtyYvii-8fp3nR"
        class="btn btn-sm fw-semibold"
        style="background: #111827; color: white; border: none; padding: .5rem 1rem; border-radius: 0.2rem;"
        download>
       Download
     </a>
-</div>
+</div-->
 
-<div class="p-1 rounded-3 d-inline-block gradient-border" >
+<div class="p-1 rounded-3 d-inline-block gradient-border mobile-only-btn" >
     <a id="downloadLink" target="_blank" href="https://drive.google.com/file/d/1_l-ZcpOLpD6cCgIt1KRtyYvii-8fp3nR/view?usp=sharing"
        class="btn btn-sm fw-semibold"
        style="background: #111827; color: white; border: none; padding: .5rem 1rem; border-radius: 0.2rem;"
        download>
-      Watch in Drive (Fullscreen)
+      Fullscreen
     </a>
 
   </div>
