@@ -29,6 +29,46 @@
     #success-message.show {
       opacity: 1;
     }
+
+.gradient-border {
+  /* center */
+  padding: 2px; /* border thickness */
+  background: linear-gradient(270deg, #0FFFFF, #FC26EC, #0FFFFF);
+  background-size: 400% 400%;
+  animation: gradientMove 8s ease infinite;
+  display: inline-block;
+}
+
+@keyframes gradientMove {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  height: auto; /* let it grow naturally */
+  overflow: visible; /* ensure controls aren’t clipped */
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  min-height: 250px; /* small screens */
+  height: 100%;
+}
+
+@media (max-width: 480px) {
+  .video-wrapper {
+    padding-top: 75%; /* taller than 56.25% */
+  }
+}
+ 
+
+
+
+    
 </style>
 
 </head>
@@ -42,9 +82,9 @@
 <nav style='background: rgba(255, 0, 0, 0.0);' class="navbar mt-4 mb-4 mx-1 mx-sm-5 navbar-light navbar-expand-lg fade-in">
   <div class="container-fluid">
       <a class="navbar-brand" href="#"><strong>Christianne</strong></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <!--button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
-    </button>
+    </button-->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         
@@ -64,7 +104,7 @@
 <div class='row fade-in'>
         <div class='col-12 col-sm-12 col-md-10 col-lg-8 col-xl-7 mx-auto'>
       <!--div class='card p-4' style='background: linear-gradient(146deg, rgba(0,0,0,1), rgba(0,0,0,0.3))'-->
-        <div class="shadow-lg  mx-auto fade-in" style="width: 30rem;"> 
+        <div class="shadow-lg  mx-auto img-fluid fade-in" style="width: 30rem;"> 
         <img src="static/imgs/christiannetrue.JPG" class="card-img-top" alt="...">
         </div>
         </div>
@@ -76,36 +116,39 @@
 </br>
 </br>
 
-<div class='container mt-5 mb-5'>
-<h1 class='mx-auto mt-5 fade-in'>Imagine a world where integrative medicine was accessible to all</h1>
+    <center><h1 class='mx-auto my-5 fade-in fw-semibold'>Imagine a world where natural medicines are accessible to all.</h1></center>
+
+</br>
+</br>
+
+
+
+
+
+
+<div class='container mb-4'>
+<div class='row fade-in'>
+        <div class='col-12 col-sm-12 col-md-10 col-lg-8 col-xl-7 mx-auto'>
+      <!--div class='card p-4' style='background: linear-gradient(146deg, rgba(0,0,0,1), rgba(0,0,0,0.3))'-->
+        <div class='shadow-lg p-4 rounded mt-5'>
+        <h2>Integrative medicine</h2>
+        <p>Combine conventional treatments with natural, complimentary therapies.</p>
+<hr/>
+<div class="card-body">
+</div>
+</div>
+</div>
+</div>
 </div>
 
 
-
-
-<div class='container mb-2'>
+<div class='container mb-4'>
 <div class='row fade-in'>
         <div class='col-12 col-sm-12 col-md-10 col-lg-8 col-xl-7 mx-auto'>
       <!--div class='card p-4' style='background: linear-gradient(146deg, rgba(0,0,0,1), rgba(0,0,0,0.3))'-->
         <div class='shadow-lg p-4 rounded'>
         <h2>Holistic health</h2>
-        <p>Heal your mind, body, and spirit</p>
-<hr/>
-<div class="card-body">
-</div>
-</div>
-</div>
-</div>
-</div>
-
-
-<div class='container mb-2'>
-<div class='row fade-in'>
-        <div class='col-12 col-sm-12 col-md-10 col-lg-8 col-xl-7 mx-auto'>
-      <!--div class='card p-4' style='background: linear-gradient(146deg, rgba(0,0,0,1), rgba(0,0,0,0.3))'-->
-        <div class='shadow-lg p-4 rounded'>
-        <h2>Integrative medicine</h2>
-        <p>Integrate traditional medicine with natural medicine</p>
+        <p>Heal not just your body, but your mind, and your spirit as well.</p>
 <hr/>
 <div class="card-body">
 </div>
@@ -121,8 +164,8 @@
         <div class='col-12 col-sm-12 col-md-10 col-lg-8 col-xl-7 mx-auto'>
       <!--div class='card p-4' style='background: linear-gradient(146deg, rgba(0,0,0,1), rgba(0,0,0,0.3))'-->
         <div class='shadow-lg p-4 rounded'>
-        <h2>Root cause functional medicine</h2>
-        <p>Find the root cause of your health</p>
+        <h2>Psychology</h2>
+        <p>Get motivated and educated to be the best version of yourself.</p>
 <hr/>
 <div class="card-body">
 </div>
@@ -136,18 +179,19 @@
 
 </br>
 </br>
+</br>
+</br>
 
 
 
 
-
-<div class="container my-5 fade-in">
-<div class="p-1 rounded-4 mx-auto" style="background: linear-gradient(69deg, #0FFFFF, #FC26EC); height: 16rem;  max-width: 500px;">
+<div class="container d-flex justify-content-center my-5 fade-in">
+<div class="p-1 rounded-4 mx-auto gradient-border">
     
   <form class="p-4 rounded-4 shadow-lg bg-white mx-auto fw-semibold shadow rounded-3 " id="subscribe-form" style="max-width: 450px;"  action="https://script.google.com/macros/s/AKfycbyGxgudFUYvPmPpyBqeT1eBIVRJ1jKT8ii0InL5ZaZrXFsWfnfUDCTcHe39QnYTPLav-Q/exec" method="POST" target="hidden-iframe">
     <!-- Email Input -->
     <div class="mb-3">
-      <label for="email" class="form-label fw-semibold">Step closer to what's next in wellness🩷</label>
+        <center> <h5 class="fw-semibold mb-4">Join us on our wellness journey🩷</h5></center>
       <input 
         type="email" 
         class="form-control form-control-lg" 
@@ -166,32 +210,155 @@
         name="consent" 
         required>
       <label class="form-check-label text-muted" for="consent">
-        Count me in for the future of medicine!
+        Count me in for the future of healing!
       </label>
     </div>
 
     <!-- Submit Button -->
   <div 
-  class="p-1 rounded-3 d-inline-block w-100 fade-in" 
-  style="background: linear-gradient(69deg, #0FFFFF, #FC26EC);">
+  class="p-1 rounded-3 d-inline-block w-100 fade-in gradient-border">
   <button 
+    id="subscribeBtn"
     type="submit" 
     class="btn btn-lg w-100 fw-semibold shadow rounded-3 " 
-    style="background: #111827; color: white; border: none;">
-    Subscribe
+    style="background: #111827; color: white; border: none; transition: transform 0.1s ease;">
+
+     <!-- Spinner (hidden by default) -->
+      <span id="btnSpinner" class="spinner-border spinner-border-sm me-2 d-none" role="status" aria-hidden="true"></span>
+      <span id="btnText">Subscribe</span>
+
   </button>
 </div>
  
  <iframe name="hidden_iframe" style="display:none;"></iframe>
   </form>
+</div>
+</div>
 
 <div id="success-message" class="alert alert-success mt-3 fade" role="alert">
   🎉 Thanks for subscribing!
 </div>
 
 </div>
+</br>
+
+
+
+<!-- Container -->
+<div class="container my-5 fade-in" style="max-width:900px;">
+  <!-- Video card with gradient outline -->
+  <div class="p-1 rounded-4 mx-auto" >
+    <div class="bg-white rounded-4 overflow-hidden" id="video-card" style="position:relative;">
+      <!-- Poster / Click-to-play overlay -->
+      <div id="video-poster" style="
+           background-image: url('static/imgs/IMG_0425.JPG');
+           background-size: cover;
+           background-position: center;
+           padding-top: 56.25%; /* 16:9 ratio */
+           position: relative;
+           cursor: pointer;
+      ">
+        <!-- Play button -->
+        <button id="playBtn" aria-label="Play video" style="
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border: none;
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: grey;
+            box-shadow: 0 8px 24px rgba(12, 12, 12, 0.35);
+            color: white;
+            font-size: 22px;
+        ">
+          ▶
+        </button>
+      </div>
+
+      <!-- Placeholder for iframe to be injected -->
+      <div id="video-iframe-placeholder" style="display:none;"></div>
+
+
+
+<!-- Controls row -->
+<div 
+  class="d-flex align-items-center justify-content-between p-3"
+  style="border: 2px solid black; border-top: none; border-radius: 0 0 0.5rem 0.5rem;">
+  
+  <div class="me-2">
+    <h5 class="mb-0">Watch: Christianne Celebration of Life</h5>
+    <small class="text-muted">MP4 · 620 MB</small>
+  </div>
+
+  <!-- Download button  -->
+  <div class="p-1 d-inline-block gradient-border" >
+    <a id="downloadLink" target="_blank" href="https://drive.google.com/uc?export=download&id=1_l-ZcpOLpD6cCgIt1KRtyYvii-8fp3nR"
+       class="btn btn-sm fw-semibold"
+       style="background: #111827; color: white; border: none; padding: .5rem 1rem; border-radius: 0.2rem;"
+       download>
+      Download
+    </a>
+  </div>
 </div>
 
+
+
+
+<script>
+
+  const FILE_ID = 'FILE_ID'; 
+  const poster = document.getElementById('video-poster');
+  const playBtn = document.getElementById('playBtn');
+  const placeholder = document.getElementById('video-iframe-placeholder');
+
+  function makeDriveIframe(fileId) {
+    const iframe = document.createElement('iframe');
+    iframe.setAttribute('src', `https://drive.google.com/file/d/${fileId}/preview`);
+    iframe.setAttribute('width', '100%');
+    iframe.setAttribute('height', '100%');
+    iframe.setAttribute('allow', 'autoplay; encrypted-media; fullscreen');
+    iframe.setAttribute('frameborder', '0');
+    iframe.style.display = 'block';
+    iframe.style.width = '100%';
+    iframe.style.height = '100%';
+    iframe.style.border = '0';
+    return iframe;
+  }
+
+  function injectIframe() {
+    // hide poster
+    poster.style.display = 'none';
+    // show iframe container
+    placeholder.style.display = 'block';
+    // create a wrapper with 16:9 aspect ratio
+    const wrapper = document.createElement('div');
+    wrapper.className = 'video-wrapper';
+    wrapper.style.position = 'relative';
+    wrapper.style.width = '100%';
+    wrapper.style.height = '0';
+    wrapper.style.overflow = 'hidden';
+
+    const iframe = makeDriveIframe('1_l-ZcpOLpD6cCgIt1KRtyYvii-8fp3nR');
+
+    iframe.style.position = 'absolute';
+    iframe.style.top = '0';
+    iframe.style.minHeight = '360px';
+    iframe.style.left = '0';
+    iframe.style.width = '100%';
+    iframe.style.height = '100%';
+
+    wrapper.appendChild(iframe);
+    placeholder.appendChild(wrapper);
+  }
+
+  // Click-to-play (lazy load)
+  playBtn.addEventListener('click', injectIframe);
+</script>
 
 
 
@@ -201,9 +368,26 @@
 <script>
   const form = document.getElementById("subscribe-form");
   const successMessage = document.getElementById("success-message");
+  const btn = document.getElementById("subscribeBtn");
+  const btnText = document.getElementById("btnText");
+  const btnSpinner = document.getElementById("btnSpinner");
+
+  
+  // Press animation feedback
+  btn.addEventListener("mousedown", () => {
+    btn.style.transform = "scale(0.97)";
+  });
+  btn.addEventListener("mouseup", () => {
+    btn.style.transform = "scale(1)";
+  });
 
   form.addEventListener("submit", function(e) {
     e.preventDefault(); // stop normal form submit
+
+// Show spinner + update button instantly
+    btnSpinner.classList.remove("d-none");
+    btnText.textContent = "Submitting...";
+    btn.disabled = true;
 
     const data = new FormData(form);
 
@@ -213,6 +397,12 @@
     })
     .then(response => response.text())
     .then(text => {
+
+ // Restore button state
+      btnSpinner.classList.add("d-none");
+      btnText.textContent = "Subscribe";
+      btn.disabled = false;
+
       if (text === "OK") {
         // Reset form fields
         form.reset();
