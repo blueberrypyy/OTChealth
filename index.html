@@ -49,7 +49,7 @@
 .video-wrapper {
   position: relative;
   width: 100%;
-  height: auto; /* let it grow naturally */
+  height: 100%; /* let it grow naturally */
   overflow: visible; /* ensure controls aren’t clipped */
 }
 
@@ -252,6 +252,10 @@
 
 
 
+
+
+
+
 <!-- Container -->
 <div class="container my-5 fade-in" style="max-width:900px;">
   <!-- Video card with gradient outline -->
@@ -304,13 +308,23 @@
   </div>
 
   <!-- Download button  -->
-  <div class="p-1 d-inline-block gradient-border" >
+  <div class="p-1 rounded-3 ms-auto me-2 d-inline-block gradient-border" >
     <a id="downloadLink" target="_blank" href="https://drive.google.com/uc?export=download&id=1_l-ZcpOLpD6cCgIt1KRtyYvii-8fp3nR"
        class="btn btn-sm fw-semibold"
        style="background: #111827; color: white; border: none; padding: .5rem 1rem; border-radius: 0.2rem;"
        download>
       Download
     </a>
+</div>
+
+<div class="p-1 rounded-3 d-inline-block gradient-border" >
+    <a id="downloadLink" target="_blank" href="https://drive.google.com/file/d/1_l-ZcpOLpD6cCgIt1KRtyYvii-8fp3nR/view?usp=sharing"
+       class="btn btn-sm fw-semibold"
+       style="background: #111827; color: white; border: none; padding: .5rem 1rem; border-radius: 0.2rem;"
+       download>
+      Watch in Drive (Fullscreen)
+    </a>
+
   </div>
 </div>
 
@@ -349,16 +363,18 @@
     wrapper.style.position = 'relative';
     wrapper.style.width = '100%';
     wrapper.style.height = '0';
+    wrapper.style.paddingTop = '56.25%';
     wrapper.style.overflow = 'hidden';
 
     const iframe = makeDriveIframe('1_l-ZcpOLpD6cCgIt1KRtyYvii-8fp3nR');
 
     iframe.style.position = 'absolute';
     iframe.style.top = '0';
-    iframe.style.minHeight = '360px';
     iframe.style.left = '0';
+
     iframe.style.width = '100%';
     iframe.style.height = '100%';
+    iframe.style.border = '0';
 
     wrapper.appendChild(iframe);
     placeholder.appendChild(wrapper);
