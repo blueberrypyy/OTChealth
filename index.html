@@ -62,9 +62,13 @@
 @media (max-width: 480px) {
   .video-wrapper {
     padding-top: 80%;
-    padding-bottom: 15%; /* space for controls */
+    padding-bottom: 20%; /* space for controls */
+  }
+   #subscribe-form {
+    max-width: 375px;  /* cap width on mobile */
   }
 }
+
 
  
 
@@ -188,9 +192,9 @@
 
 
 <div class="container d-flex justify-content-center my-5 fade-in">
-<div class="p-1 rounded-4 mx-auto gradient-border">
+<div class="p-1 rounded-4 mx-auto gradient-border" style="width: 500px;">
     
-  <form class="p-4 rounded-4 shadow-lg bg-white mx-auto fw-semibold shadow rounded-3 " id="subscribe-form" style="max-width: 450px;"  action="https://script.google.com/macros/s/AKfycbyGxgudFUYvPmPpyBqeT1eBIVRJ1jKT8ii0InL5ZaZrXFsWfnfUDCTcHe39QnYTPLav-Q/exec" method="POST" target="hidden-iframe">
+  <form class="p-4 rounded-4 shadow-lg bg-white mx-auto fw-semibold shadow rounded-3" id="subscribe-form" style="max-width: 450px;"  action="https://script.google.com/macros/s/AKfycbyGxgudFUYvPmPpyBqeT1eBIVRJ1jKT8ii0InL5ZaZrXFsWfnfUDCTcHe39QnYTPLav-Q/exec" method="POST" target="hidden-iframe">
     <!-- Email Input -->
     <div class="mb-3">
         <center> <h5 class="fw-semibold mb-4">Join us on our wellness journey🩷</h5></center>
